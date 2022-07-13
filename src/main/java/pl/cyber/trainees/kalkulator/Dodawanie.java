@@ -13,7 +13,6 @@ public class Dodawanie {
         return val.concat(val2);
     }
 
-    ;
 
     public static Integer add(final Integer val, final Integer val2) {
         return val + val2;
