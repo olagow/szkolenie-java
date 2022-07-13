@@ -50,7 +50,7 @@ public class SimpleApp {
         int c = 1;
         int d = 5;
         System.out.print(add(c,d));
-//testowa zmiana
+//testowa zmiana2
 
         //Utworzenie 2 zmiennych typu Double i ich inicjalizacja
         double e = 2.5;
