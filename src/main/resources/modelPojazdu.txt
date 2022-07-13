@@ -1,0 +1,1 @@
+FORD, 1991, przód, MONDEO, 10000, 2.0, CZERWONY
