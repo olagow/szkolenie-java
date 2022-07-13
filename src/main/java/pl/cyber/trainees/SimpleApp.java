@@ -1,6 +1,8 @@
 package pl.cyber.trainees;
 
+import groovy.lang.AdaptingMetaClass;
 import org.codehaus.groovy.transform.SourceURIASTTransformation;
+import pl.cyber.trainees.kalkulator.Dodawanie;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,14 +14,23 @@ public class SimpleApp {
 
     public static String SEPARATOR_SPACJA = " ";
 
-
-    public static void main(String[] args) {
-
+    public static void main(String[] args)
         int scale = 0;
 
 
+    String imie = "Ola";
+    String miasto = "Krakow";
 
-//        String space = " ";
+    Dodawanie
+    Dodawanie wynik;
+    wynik(imie,miasto);
+    System.out.println(imie, miasto)
+
+
+
+
+
+//        Stringspace = " ";
 //        String a = "Ala";
 //        String b = "ma kota";
 //
@@ -32,19 +43,20 @@ public class SimpleApp {
         //Utworzenie 2 zmiennych typu String i ich inicjalizacja
         String a = "Ola";
         String b = "Gowin";
-        System.out.print(concat(a,b));
+        System.out.print("wynik concat: "+concat(a,b) );
 
 
         //Utworzenie 2 zmiennych typu Integer i ich inicjalizacja
-        Integer c = 1;
-        Integer d = 5;
-        System.out.print(c+d);
+        int c = 1;
+        int d = 5;
+        System.out.print(add(c,d));
 
 
         //Utworzenie 2 zmiennych typu Double i ich inicjalizacja
-        Double e = 2.5;
-        Double f = 1.5;
-        System.out.println(e-f);
+        double e = 2.5;
+        double f = 1.5;
+        System.out.println("wynik odejmowania Oli: " + odejmowanie(e,f) );
+
 
 
 
@@ -67,7 +79,7 @@ public class SimpleApp {
         roundNumber("2.6", scale);
         System.out.println("NEXT");
         //endregion
-
+/*
         //region praca domowa
         String valString1 = "pierwszy string";
         String valString2 = new String("drugi string"); // konstrukcja stowosana np czy odczycie informacji z pliku tekstowego zamiast napisu wtedy podaje się jakąś wartośc ze zmiennej
@@ -86,7 +98,7 @@ public class SimpleApp {
         BigDecimal valBigDec2 = new BigDecimal("4.5");
 
         System.out.println("dodawanie: " + add(valBigDec1, valBigDec2) + ", odejmowanie: " + subtract(valBigDec1, valBigDec2) + ", mnożenie: " + multiplication(valBigDec1, valBigDec2) + ", dzielenie: " + division(valBigDec1, valBigDec2));
-
+*/
 //        Problem dzielenia przez 0
 
 //        System.out.println("Dzielenie przez 0" +  division(valDouble1, 0.0));
@@ -99,10 +111,17 @@ public class SimpleApp {
 
     }
 
+    public static double odejmowanie(double l1,double l2){
+        var result = l1 - l2 ;
+        return result;
+    }
+
+
     public static int add(int l1, int l2) {
         var result = l1 + l2;
         return result;
     }
+
 
     public static String concat(String l1, String l2) {
         var result = l1 + l2 + "\n";
