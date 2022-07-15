@@ -47,4 +47,26 @@ public class Pojazd {
     public String getNaped (){
         return naped
     }
+
+
+
+
+    private String marka;
+    private String rocznik;
+    private String naped;
+
+    public void setKolor(Kolor kolor) {
+        this.kolor = kolor;
+}
+
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+    public void setRocznik(String rocznik) {
+        this.rocznik = rocznik;
+    }
+
+        public void setNaped(String naped) {
+        this.naped = naped}
 }
