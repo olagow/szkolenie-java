@@ -65,6 +65,8 @@ public class Model extends Pojazd{
 
 
     }
+
+    //Settery - metody, któych zadaniem jest ustawianie informacji z paratemru metody do parametru klasy
  public void setNazwa (final String nazwa) {
         this.nazwa = nazwa;
  }
@@ -83,6 +85,5 @@ public class Model extends Pojazd{
 }
 
 
-}
 
 
