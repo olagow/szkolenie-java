@@ -29,7 +29,11 @@ public class Pojazd {
     public String toString(){
         return "marka: " + this.marka
                 + "rocznik: " + this.rocznik
+<<<<<<< HEAD
                 + "napęd: " + this.naped;
+=======
+                + "napęd: " + this.naped
+>>>>>>> origin/spotkanie2207
 
     }
 
@@ -37,6 +41,7 @@ public class Pojazd {
     //do dalszego przetwarzania
 
     public String getMarka (){
+<<<<<<< HEAD
         return marka;
     }
 
@@ -46,5 +51,16 @@ public class Pojazd {
 
     public String getNaped (){
         return naped;
+=======
+        return marka
+    }
+
+    public String getRocznik (){
+        return rocznik
+    }
+
+    public String getNaped (){
+        return naped
+>>>>>>> origin/spotkanie2207
     }
 }

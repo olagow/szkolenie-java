@@ -37,6 +37,7 @@ public class Model extends Pojazd{
 
     @Override //adnotacja wykorzystywana do przyslaniania metod
     public String toString(){
+<<<<<<< HEAD
         return "Marka: " + getMarka()
                + " rocznik: " + getRocznik()
                + " naped: " + getNaped()
@@ -46,6 +47,19 @@ public class Model extends Pojazd{
                + " kolor: " + this.kolor;
     }
 
+=======
+        return "Marka: " + getMarka();
+               + "rocznik" + getRocznik();
+               + "naped" + getNaped();
+               + "nazwa modelu" + this.nazwa;
+               + "przebieg: " + this.przebieg;
+               + "pojemoscsilnika: " this.pojemnoscSilnika;
+               +  "kolor: " this.kolor;
+
+    }
+
+
+>>>>>>> origin/spotkanie2207
     public String getNazwa() {
         return nazwa;
     }
