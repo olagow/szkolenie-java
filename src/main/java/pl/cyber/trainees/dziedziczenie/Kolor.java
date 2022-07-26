@@ -1,3 +1,4 @@
+/*
 package pl.cyber.trainees.dziedziczenie;
 
 
@@ -7,3 +8,4 @@ public enum Kolor {
     ZIELONY,
     NIEBIESKI
 }
+*/
