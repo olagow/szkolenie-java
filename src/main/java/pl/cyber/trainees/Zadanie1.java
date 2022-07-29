@@ -1,6 +1,5 @@
 package pl.cyber.trainees;
 
-import java.math.BigDecimal;
 import java.util.Scanner;
 
 /*1) do wykonanaia zadanie, które polega na pobraniu od użytkownika informacji wprowadzonych z klawiatury.
@@ -17,8 +16,8 @@ import java.util.Scanner;
         e*10: w
         etc.
 */
-public class zadanie1 {
-    public static void main(String[] args) {
+public class Zadanie1 {
+    public void zadanie1Metoda() {
 
         Integer[] tablicaInteger = new Integer[5];
         Scanner scan = new Scanner(System.in);

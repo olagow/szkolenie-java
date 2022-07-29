@@ -1,17 +1,14 @@
 package pl.cyber.trainees;
 
-import groovy.lang.GString;
 import pl.cyber.trainees.dziedziczenie.Model;
 import pl.cyber.trainees.service.OdczytDanych;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class zadaniePojazdy {
+public class ZadaniePojazdy {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public void zadaniePojazdyMetoda() throws FileNotFoundException {
 
         OdczytDanych odczytd = new OdczytDanych();
         Model samochod1 = odczytd.daneOModeluPojazdu(new File("C:\\Users\\Dell\\IdeaProjects\\szkolenie-java\\src\\main\\resources\\samochody.podkatalog\\samochod1.txt"));

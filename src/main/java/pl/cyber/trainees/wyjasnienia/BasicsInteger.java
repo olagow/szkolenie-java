@@ -1,4 +1,4 @@
-package pl.cyber.trainees.wyjasnienia;
+/*package pl.cyber.trainees.wyjasnienia;
 
 /*
   Warte zapamiętania
@@ -45,7 +45,7 @@ package pl.cyber.trainees.wyjasnienia;
  }
 
 
-   */
+
 
 public class BasicsInteger {
 
@@ -92,3 +92,4 @@ public class BasicsInteger {
 
 
 }
+*/

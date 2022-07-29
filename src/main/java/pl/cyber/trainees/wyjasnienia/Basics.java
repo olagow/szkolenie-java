@@ -1,4 +1,4 @@
-package pl.cyber.trainees.wyjasnienia;
+/*package pl.cyber.trainees.wyjasnienia;
 
 public class Basics {
 //Utworzyć metodę, której zadaniem jest wyświetlenie tekstu podanego jako parametr
@@ -67,3 +67,4 @@ public class Basics {
         System.out.println(txt + suma);
     }
 }
+*/
