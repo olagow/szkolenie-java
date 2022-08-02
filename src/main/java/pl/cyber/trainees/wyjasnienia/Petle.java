@@ -153,6 +153,7 @@ for(int i = 0; i<5; i--); { -- tzw pętla nieskończona
 
     public void liczbyPodzielne() {
 
+       //zadanie
         Integer sumaLiczb = 0;
         Integer sumaLiczb1 = 0;
         Integer parametr = 1;
