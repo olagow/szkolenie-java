@@ -3,11 +3,10 @@ package pl.cyber.trainees.wyjasnienia;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 
 public class Petle {
-
-
-
 
 
    /*
@@ -69,6 +68,7 @@ for(int i = 0; i<5; i--); { -- tzw pętla nieskończona
         rozwiazanieZadanie1(lista);
         choinkaRozbudowana(4);
         sumaLiczbZForIWhile();
+        silniaRekurencja(4);
 
     }
 
@@ -153,7 +153,7 @@ for(int i = 0; i<5; i--); { -- tzw pętla nieskończona
 
     public void liczbyPodzielne() {
 
-       //zadanie
+        //zadanie
         Integer sumaLiczb = 0;
         Integer sumaLiczb1 = 0;
         Integer parametr = 1;
@@ -172,7 +172,7 @@ for(int i = 0; i<5; i--); { -- tzw pętla nieskończona
         while (parametr <= 100) {
             if (parametr % 5 == 0) {
                 System.out.println("Podzielne przez 5: " + parametr);
-                sumaLiczb1+= parametr;
+                sumaLiczb1 += parametr;
 
             }
             parametr++;
@@ -181,13 +181,13 @@ for(int i = 0; i<5; i--); { -- tzw pętla nieskończona
         }
         System.out.println("Suma liczb1: " + sumaLiczb1);
 
-        int ileRazy=0;
-        parametr=1;
-        while(parametr<=100){
+        int ileRazy = 0;
+        parametr = 1;
+        while (parametr <= 100) {
 
             System.out.println("Podnies o dwa: " + parametr);
             ileRazy++;
-            parametr=parametr*2;
+            parametr = parametr * 2;
         }
 
         System.out.println("Ile razy: " + ileRazy);
@@ -229,23 +229,24 @@ liczba++;
 
  */
 
-    public void pierwszyProgramWhile(){
+    public void pierwszyProgramWhile() {
         int liczba = 10;
 
-        while(liczba < 1){
-        System.out.println("while, to jest liczba: " + liczba);
-        liczba++;
-    }
+        while (liczba < 1) {
+            System.out.println("while, to jest liczba: " + liczba);
+            liczba++;
+        }
 
-    do {
-        System.out.println("do While, to jest liczba: " + liczba);
-        liczba++;
-    } while(liczba <= 23);
+        do {
+            System.out.println("do While, to jest liczba: " + liczba);
+            liczba++;
+        } while (liczba <= 23);
 
 
         //wykonać for od 1 do 10 wyświetlić sumęFor i następnie wykonać to samo przy użyciu while/do-while
         //oraz wykorzystać if do porównania liczb, jeśli się uzgodnią to wyświetlamy true w przeciwnym wypadku false
-        }
+    }
+
     public void sumaLiczbZForIWhile() {
         Integer sumaFor = 0;
         Integer sumaWhile = 0;
@@ -255,20 +256,20 @@ liczba++;
             sumaFor += i;
         }
 
-        while (licznikWhile<=10) {
-            sumaWhile +=licznikWhile;
+        while (licznikWhile <= 10) {
+            sumaWhile += licznikWhile;
             licznikWhile++;
 
-    }
+        }
 
-    System.out.println("Suma For: " + sumaFor);
-    System.out.println("Suma While: " + sumaWhile);
+        System.out.println("Suma For: " + sumaFor);
+        System.out.println("Suma While: " + sumaWhile);
 
-    if(sumaFor ==sumaWhile) {
-        System.out.println(true);
-    }else {
-        System.out.println(false);
-    }
+        if (sumaFor == sumaWhile) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
 
     }
 
@@ -277,14 +278,47 @@ liczba++;
     //zmienna o wartosci 1, wykorzystaj while.
     // Podnos licznik x2 do momentu aż liczba nie przekroczy 100
     // oraz wyswietl ile razy pętla się wykonała
+    //zadanie powyzej
 
 
+    public void silnia() {
+
+        Scanner scan = new Scanner(System.in);
+        Integer n = scan.nextInt();
+        Integer s = 1;
+        Integer i = 1;
+
+        System.out.println("Jestem przed While i: " + i + "n" + n + "s" + s);
+
+        while (i <= n) {
+            System.out.println("Jestem w while i: " + i + "n: " + n + "s: " + s + "wykonuję mnożenie s oraz podniesienie (dodawanie) i o 1");
+
+            s *= i;
+            i++;
+            System.out.println("Jestem na końcu przegiegu While i: " + i + "n" + n + "s" + s);
+        }
+        System.out.println("n! wynosi " + s);
+
+        s = 1;
+        for (int j = 1; j <= n; j++) {
+            s = s * j;
+        }
+
+
+        System.out.println("n! wynosi " + s);
+    }
+
+
+    private Integer silniaRekurencja(Integer n) {
+
+        if (n > 1) {
+            return n * silniaRekurencja(n - 1);
+        } else {
+            return 1;
+        }
+    }
+    //Praca domowa wykonać ciąg Fibonacciego metodą rekurencyjną
 }
-
-
-
-
-
 
 
 

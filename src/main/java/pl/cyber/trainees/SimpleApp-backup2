@@ -16,5 +16,43 @@
                System.out.println(modelPojazdu2.getNaped());
                System.out.println(modelPojazdu2.getNazwa());
 
+//Kolekcje w Java: Zbiory Danych
+        //4 rodzaje kolekcji: List - lista, Set - zbiór, Map - mapa, Queue - kolejka;
+        /*
+        jeden, dwa, trzy, cztery
+        List -> jeden, dwa, trzy, cztery   <- gwarantuje nam kolejność zbioru danych
+        Set <- nie gwarantuje kolejności zbioru (za każdym razem może być inna kolejność)
+        np:
+        a) jeden, dwa, trzy, cztery
+        b) trzy, cztery, jeden, dwa
+        c) etc.
+        Map <- przechowuje wartości jako klucz-wartość
+        jeden <-> 1
+        dwa <-> 2
+        trzy <-> 3
+        cztery <-> 4
+        Queue <- jeden, dwa, trzy, cztery <- podobne zachowanie do List'y, natomiast możemy zastosować algorytmy LIFO i FIFO
+        LIFO - Last In First Out   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [nowy record]    <<<- kierunek odczytu danych
+        FIFO - First In First Out <- opis jak kolejka w sklepie przy kasie
+           kierunek odczytu danych --->>>>  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [nowy record]
+        Najpopularniejsze implementacje:
+        List:
+                ArrayList() - tablica listy, która nie przechowuje informacji o poprzednim i następnym rekordzie
+                LinkedList() - tablica listy, która przechowuje informacje o poprzednim i następnym rekordzie
+                String nowyString = "";
+                List<Model> modele = new ArrayList<>();  w <> przechowujemy konkretny typ danych
+                modele.add(modelPojazdu1);
+                List<String> lista = new ArrayList<String>();
+                lista.add("pierwszy");   <---- add() to metoda dodająca wartości do listy. Jej parametrem jest Object wskazany w <>
+                lista.add("drugi");
+                System.out.println(lista.get(1)); //wypisze "drugi"
+         Set:
+                HashSet() - nie gwarantuje kolejności
+                TreeSet() - gwarancja kolejności,  Z reguły stosowane do zagadnień "drzewa binarnego"
+                Set<String> nazwaSet = new HashSet<>();
+                nazwaSet.add("pierwszy");
+                size() - w przypadku list, setu etc będzie zwracać ilość elementów kolekcji lista.size(), nazwaSet.size()
+         */
+
 
        }

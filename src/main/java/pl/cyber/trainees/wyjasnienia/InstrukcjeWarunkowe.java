@@ -30,7 +30,7 @@ if(2+2 = 4) {
 println("dodawanie równe 4");
 }
 
-else - potocznie w przeciwnym wypadku
+else - potocznie w przeciwnym wypadkuuu
 
 if(CONDITION) {
  //pojawić się powinien kod jeśli warunek jest spełniony (true)

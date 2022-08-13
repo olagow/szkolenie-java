@@ -1,0 +1,4 @@
+KOT, Kicius, 2020/04/03, 12, Ola, 26, true
+KOT, Mruczek, 2010/05/03, 17, Ola, 300, true
+KOT, Wacus, 2019/09/09, 15, Ola, 100, false
+PIES, Goldie, 2020/05/10, 14, Ola, 250,true
