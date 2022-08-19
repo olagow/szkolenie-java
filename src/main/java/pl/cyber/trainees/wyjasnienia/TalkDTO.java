@@ -2,7 +2,7 @@ package pl.cyber.trainees.wyjasnienia;
 
 //Rodzaje obiektow w Java
 //POJO Plain Old Java Object - reprezentuje obiekty bez adnotacji
-//DTO -> Data Transfer Object - obiektyt, ktore przesylaja informacje
+//DTO -> Data Transfer Object - obiekty, ktore przesylaja informacje
 //Encja - obiekt DTO,ktory ma za zadanie reprezentowac strukture tabeli bazy danych
 //value object - obiekt z jednym parametrem oraz (posiadaja tylko metode getter bez metody setter), ktory waliduje poprawna strukture
 // tzn czy parametr nie jest null i czy posiada wartosc

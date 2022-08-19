@@ -11,6 +11,12 @@ public class Pies extends Zwierzę{
     private Double waga;
     private String imieOpiekuna;
 
+    public Pies() {
+        super(null, false);
+        imiePsa = "";
+        dataUrodzenia = LocalDate.now();
+    }
+
     public Pies(final Double wzrost,
                 final boolean czyMaSiers,
                 final String imiePsa,
@@ -25,20 +31,11 @@ public class Pies extends Zwierzę{
 
 
     }
-    public Pies() {
-        super(null, false);
-        imiePsa = "";
-        dataUrodzenia = LocalDate.now();
-    }
-
-
-    @Override
-    public String dajGlos() {
-        return "Hauuu";
-
-
-    }
-
+//    public Pies() {
+//        super(null, false);
+//        imiePsa = "";
+//        dataUrodzenia = LocalDate.now();
+//    }
 
 
     public String przedstawSie() {
@@ -49,6 +46,13 @@ public class Pies extends Zwierzę{
                 + "imie opiekuna" + this.imieOpiekuna;
 
     }
+
+
+    @Override
+    public String dajGlos() {
+        return "Hauuu";
+    }
+
 
     public Pies convertFromFile(String rowInFile) {
         String[] tablicaPliku = rowInFile.split(",");
@@ -62,25 +66,7 @@ public class Pies extends Zwierzę{
 
         return new Pies(
                 Double.valueOf(tablicaPliku[5]), Boolean.parseBoolean(tablicaPliku[6]), tablicaPliku[1],
-                dataUrodzenia, Double.valueOf(tablicaPliku[3]), tablicaPliku[4]
-        );
-    }
-
-
-    public String getImiePsa() {
-        return imiePsa;
-    }
-
-    public LocalDate getDataUrodzenia() {
-        return dataUrodzenia;
-    }
-
-    public Double getWaga() {
-        return waga;
-    }
-
-    public String getImieOpiekuna() {
-        return imieOpiekuna;
+                dataUrodzenia, Double.valueOf(tablicaPliku[3]), tablicaPliku[4]);
     }
 
 

@@ -3,6 +3,7 @@ package pl.cyber.trainees.wyjasnienia;
 import pl.cyber.trainees.wyjasnienia.Wyjatek.MojPierwszyException;
 import pl.cyber.trainees.wyjasnienia.zwierzeta.Kot;
 import pl.cyber.trainees.wyjasnienia.zwierzeta.Pies;
+import pl.cyber.trainees.wyjasnienia.zwierzeta.ZwierzeEnum;
 import pl.cyber.trainees.wyjasnienia.zwierzeta.Zwierzę;
 
 import java.io.File;
@@ -21,7 +22,7 @@ public class Obiekty {
         //    zadanie2();
         //    zadanie3();
         //   zadanie4();
-            zadanie5();
+        zadanie5();
 
     }
 
@@ -50,17 +51,17 @@ public class Obiekty {
         System.out.println(talkDTO.getPrzyklady());
 
         //dodawanie do paramentrow listy wersja 1
+
         List<String> wiecej = new ArrayList<>();
         wiecej.add("przyklad2");
         wiecej.add("przyklad3");
 
         talkDTO.modifyList((wiecej));
 
+        System.out.println(talkDTO.getPrzyklady());
 
         //dodawanie do paramentrow listy wersja 2
 
-        System.out.println(talkDTO.getPrzyklady());
-        //talkDTO.setPrzyklady(wiecej);//?
 
         List<String> wiecej2 = new ArrayList<>();
         // wiecej2.addAll(talkDTO.getPrzyklady()): //talkDTO.getPrzyklad() [przyklad1]
@@ -69,6 +70,7 @@ public class Obiekty {
 
 
         talkDTO.setPrzyklady(wiecej2);
+
         System.out.println(talkDTO.getPrzyklady());
 
         //dodawanie do parametru listy nowych wartosci ver 3
@@ -116,6 +118,7 @@ public class Obiekty {
             System.out.println(kot.przedstawSie());
         }
 
+        //2 opcja: tworzenie 3 obiektow: koty
         //    var kot1 = new Kot("Felix", LocalDate.of(2020, 7, 2), 3.0, "Mariusz");
         //    var kot2 = new Kot("Felix2", LocalDate.of(2020, 8, 2), 3.5, "Mariusz");
         //    var kot3 = new Kot("Felix3", LocalDate.of(2020, 9, 2), 4.0, "Mariusz");
@@ -127,42 +130,11 @@ public class Obiekty {
 
 
     }
-                  /*
-                     Firma
-                        Osoba
-                          Pracownik
-                            Sekretarka
-                            Programista
-                            Tester
-                          Szef
-                        adres
-
-                     class Firma {
-                     List<Osoba> osoby;
-                     String adres
-                     }
-
-                     class Osoba {
-                       String pietroNaKtorymPracuje;
-                     }
-
-                     class Szef extends Osoba {
-                       String imie;
-                     }
-
-                     class Sekretarka extends Pracownik {
-                       String imie;
-                     }
-
-                     class Pracownik extends Osoba {
-
-                     }
-
-                      */
-
 
     //zadanie 3
-    //utworzyc liste 3 kotow
+    /*utworzyc liste 3 kotow dodac je do List Zwierze
+    a następnie niech każdy z nich się przedstawi.
+       */
 
     private void zadanie3() {
 
@@ -172,9 +144,12 @@ public class Obiekty {
         zwierze.add(new Kot(250.0, true, "Kiciuś3", LocalDate.of(2010, 5, 23), 20.0, "Ola"));
 
         for (Zwierzę zw : zwierze) {
-            if (zw instanceof Kot) {   //zeby sie upewnic czy faktycznie ten typ ogolny zw jest typu szczegolowego Kot
+            if (zw instanceof Kot) {   //nie było przedstawsie wiec trzeba sie upewnic przez iczy faktycznie zwierze jest typu kot , czy to
+                //co jest w ramach obiektu zwierze, przynalezy do jakiegos innego obiektu
+                //
 
-                System.out.println(((Kot) zw).przedstawSie());
+                System.out.println(((Kot) zw).przedstawSie());         //rzutowanie danych, nasze zwierze rzutujemy na kota, nakladamy nawiassy na
+                //zewnatrz i mozemy stosowac metode z naszej klasy Kot
                 System.out.println(((Kot) zw).isCzyMaSiers()); //odwolanie do metody
             }
         }
@@ -213,16 +188,16 @@ public class Obiekty {
 
         }
 
-             DateConverter dateConverter = new DateConverter();
-                  try{
-                 System.out.println(dateConverter.stringToDate("2022/05/10"));
-             } catch(ParseException e){
-                 throw new RuntimeException(e);
-             }
-             }
+        DateConverter dateConverter = new DateConverter();
+        try {
+            System.out.println(dateConverter.stringToDate("2022/05/10"));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
-          //Zadanie 5,
+    //Zadanie 5,
     // utworz enum o nazwie Zwierze w ktorym beda opcje kot i pies.
     // utwórz liste 3 kotów i 1 psa poprzez utworzenie pliku zwierzeta.txt
     // ODczytaj plik przez aplikacje. Dodaj zwierzeta do LIST<Zwierze> a nastepnie  niech kazdy z nich sie
@@ -234,76 +209,90 @@ public class Obiekty {
         List<Zwierzę> zwierzeList = pobierzInformacjeZPliku(file);
 
         for (Zwierzę zw : zwierzeList) {
-          System.out.println(((Pies)zw).przedstawSie());
-        }
-      }
+            if (zw instanceof Pies) {
+                System.out.println(((Pies) zw).przedstawSie());
+            } else if (zw instanceof Kot) {
+                System.out.println(((Kot) zw).przedstawSie());
+            }
 
-      private List<Zwierzę> pobierzInformacjeZPliku(File file) {
+            System.out.println(zw.dajGlos());
+        }
+    }
+
+
+    private List<Zwierzę> pobierzInformacjeZPliku(File file) {
         Scanner scan = null;
         try {
-          scan = new Scanner(file);
+            scan = new Scanner(file);
         } catch (FileNotFoundException e) {
-          throw new MojPierwszyException("Komunikat naszego błędu!");
+            throw new MojPierwszyException("Komunikat naszego błędu!");
         }
 
         List<Zwierzę> zwierzeta = new ArrayList<>();
 
-        while (scan.hasNext()){
-          String rowInFile = scan.nextLine();
-          String[] tablicaPliku = rowInFile.split(",");
-          if("PIES".contains(tablicaPliku[0])) {
-            Pies pies = new Pies();
-            zwierzeta.add(pies.convertFromFile(rowInFile));
-          }
+        while (scan.hasNext()) {
+            String rowInFile = scan.nextLine(); //PIES, Goldie, 2020/05/10, 14, Ola, 250,true
+            String[] tablicaPliku = rowInFile.split(",");
+            if (ZwierzeEnum.PIES.name().equals(tablicaPliku[0])) {
+                Pies pies = new Pies();
+                zwierzeta.add(pies.convertFromFile(rowInFile));
+            } else if (ZwierzeEnum.KOT.name().equals(tablicaPliku[0])) {
+                Kot kot = new Kot();
+                zwierzeta.add(kot.convertFromFile(rowInFile));
+            }
         }
-         return zwierzeta;
+
+        return zwierzeta;
+    }
+
+
 }
-
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  /*
+   Firma
+      Osoba
+        Pracownik
+          Sekretarka
+          Programista
+          Tester
+        Szef
+      adres
+   class Firma {
+   List<Osoba> osoby;
+   String adres
+   }
+   class Osoba {
+     String pietroNaKtorymPracuje;
+     powiedzGdziePracujesz(){}
+   }
+   class Szef extends Osoba {
+     String imie;
+     przyznajPremie(){}
+   }
+   class Sekretarka extends Pracownik {
+     String imie;
+     odbierzTelefon(){}
+   }
+      class Programista extends Pracownik {
+     String imie;
+     stworzAplikacje(){}
+   }
+    class Tester extends Pracownik {
+     String imie;
+     //posiada rowniez pola
+     String numerPokoju;
+     String pietroNaKtorymPracuje;
+     testujAplikacje(){}
+     //posiada rowniez metodę
+     siedzeWPokoju(){}
+     powiedzGdziePracujesz(){}
+   }
+   class Pracownik extends Osoba {
+      String numerPokoju;
+      siedzeWPokoju(){}
+   }
+       if(Pracownik instanceof Sekretarka) {
+         System.out.println( ((Sekretarka)pr).odbierzTelefon());
+       }
+       if(Pracownik instanceof Programista) {
+         System.out.println( ((Programista)pr).stworzAplikacje());
+       }       */
