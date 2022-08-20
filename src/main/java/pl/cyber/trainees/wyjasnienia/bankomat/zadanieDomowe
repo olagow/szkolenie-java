@@ -35,18 +35,4 @@ package pl.cyber.trainees.wyjasnienia;
         Sprawdzenie stanu konta karty powinna zwrócić gotówkę w ramach danej karty.
         Pozostałe funkcjonalności zgodnie z opisem wyżej.*/
 
-public class Bankomat {
-
-    public void bankomat{
-        if ("Wybierz karte");
-
-
-
-
-
-
-    }
-
-
-
 }

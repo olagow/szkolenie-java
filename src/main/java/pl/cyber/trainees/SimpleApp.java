@@ -1,6 +1,7 @@
 package pl.cyber.trainees;
 
 import pl.cyber.trainees.wyjasnienia.*;
+import pl.cyber.trainees.wyjasnienia.bankomat.BankomatService;
 
 public class SimpleApp {
 
@@ -30,14 +31,21 @@ public class SimpleApp {
 //
 //        Wyjatki wyjatki = new Wyjatki();
 //        wyjatki.uruchom();
+//
+//        WyjatkiPowtorka powtorka = new WyjatkiPowtorka ();
+//        powtorka.uruchom();
+//
+//
+//        Obiekty obiekty = new Obiekty();
+//        obiekty.uruchom();
 
-        WyjatkiPowtorka powtorka = new WyjatkiPowtorka ();
-        powtorka.uruchom();
 
+        BankomatService bankomat = new BankomatService();
+        bankomat.uruchomRozwiazanie1();
+        bankomat.uruchomRozwiazanie2();
 
-        Obiekty obiekty = new Obiekty();
-        obiekty.uruchom();
 
     }
+
 
 }
